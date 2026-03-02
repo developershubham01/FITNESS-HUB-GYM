@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gym-dark text-white font-inter selection:bg-gym-accent selection:text-white antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  
+  .glass-card-hover {
+    @apply hover:border-gym-accent/50 hover:bg-white/5 transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-3 bg-gym-accent hover:bg-gym-accentHover text-white font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-gym-accent/20 active:scale-95 flex items-center justify-center gap-2;
+  }
+  
+  .btn-outline {
+    @apply px-8 py-3 bg-transparent border-2 border-white/20 hover:border-gym-accent text-white font-bold rounded-lg transition-all duration-300 active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .accent-glow {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.2);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gym-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-gym-accent transition-colors;
+}
+
+html {
+  scroll-behavior: smooth;
+}
